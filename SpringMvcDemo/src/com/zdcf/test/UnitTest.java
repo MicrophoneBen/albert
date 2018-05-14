@@ -279,7 +279,7 @@ public class UnitTest extends BaseService {
 		
 		 HttpClient client = new DefaultHttpClient();
 		 
-		 HttpGet get = new HttpGet("http://192.168.0.102:8080/SpringMvcDemo/lab/mutiThreads");
+		 HttpGet get = new HttpGet("http://192.168.0.102:8080/albert/lab/mutiThreads");
 		 
 		 HttpResponse httpResponse;  
 		 

@@ -184,7 +184,7 @@ public class FileAction implements ServletContextAware{
     	fileService.addFace(face);
     	int id = fileService.getFace(url).getId();
     	face.setId(id);
-//    	String path = "http://"+Tools.getLocalIP()+":8080/SpringMvcDemo/uploadface/"+url;
+//    	String path = "http://"+Tools.getLocalIP()+":8080/albert/uploadface/"+url;
 //    	String path = "http://"+Tools.getServerIp()+":9999/uploadface/"+url;
     	String path = "http://albert6.com:9999/uploadface/"+url;
     	System.out.println(path);

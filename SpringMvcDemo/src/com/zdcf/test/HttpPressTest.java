@@ -30,7 +30,7 @@ public class HttpPressTest
                     try
                     {
                         long time1 = System.currentTimeMillis();
-                        URL url = new URL("http://192.168.0.102:8080/SpringMvcDemo/lab/mutiThreads");
+                        URL url = new URL("http://192.168.0.102:8080/albert/lab/mutiThreads");
                         InputStreamReader isr = new InputStreamReader(url.openStream());
                         long time2 = System.currentTimeMillis();
                         System.out.print("Thread " + NO + " time:" + (time2 - time1) + "ms");

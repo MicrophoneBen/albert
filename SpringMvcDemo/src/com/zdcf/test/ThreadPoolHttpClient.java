@@ -29,7 +29,7 @@ public class ThreadPoolHttpClient {
     // 线程池的容量
     private static final int POOL_SIZE = 20;
     private HttpClient client = null;
-    String[] urls={"http://192.168.0.102:8080/SpringMvcDemo/lab/mutiThreads"};
+    String[] urls={"http://192.168.0.102:8080/albert/lab/mutiThreads"};
     public ThreadPoolHttpClient(String[] urls){
         this.urls=urls;
     }

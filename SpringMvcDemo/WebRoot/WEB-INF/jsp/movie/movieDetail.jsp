@@ -13,7 +13,7 @@ function backtoHome(){
 	history.go(-1);
 }
 // var curUrl = location.href.toLowerCase();
-// baseUrl =curUrl.indexOf("SpringMvcDemo") > -1 ? "/SpringMvcDemo/" : "";
+// baseUrl =curUrl.indexOf("albert") > -1 ? "/albert/" : "";
 $( document ).ready(function() {
  	$("#movieDetial").find("img").each(function(){
 //  		var tempPointer =$(this);

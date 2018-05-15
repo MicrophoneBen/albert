@@ -254,16 +254,16 @@ public class Job {
 	}
 	
 //	@Scheduled(cron = "1 22 0/1 * * ? ")
-//	@Scheduled(cron = "0 0 0 * * ? ")
-//	public void addNewMovie(){
-//		
-//		System.out.println("获取新电影：");
-//		PageInfo page = movieService.buildPage(1);//max 192
-//		movieService.getPage(page);
-//		
-//	}
+	@Scheduled(cron = "0 0 0 * * ? ")
+	public void addNewMovie(){
+		
+		System.out.println("获取新电影：");
+		PageInfo page = movieService.buildPage(1);//max 192
+		movieService.getPage(page);
+		
+	}
 	
-//	@Scheduled(cron = "1 14 0/1 * * ? ")
+//	@Scheduled(cron = "11 57 0/1 * * ? ")
 //	public void addMovie(){
 //		
 //		for(int i=1;i<192;i++){

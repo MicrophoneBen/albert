@@ -64,36 +64,36 @@ public class MovieAction {
 //		List<ChnlMovieSearch> list = null;
 		List<ChnlMovieSearch> list = movieSearchService.search(searchParam);
 		
-		for (ChnlMovieSearch chnlMovieSearch : list) {
-			
-			FileExchange fileExchange =fileService.getFileExchange(chnlMovieSearch.getImg());
-			if(null==fileExchange){
-				FileExchange newfileExchange = new FileExchange();
-				HttpClient client = new HttpClient();
-				GetMethod get = new GetMethod(chnlMovieSearch.getImg());
-				String fileExt = FilenameUtils.getExtension(chnlMovieSearch.getImg());
-				String newUrl = UUID.randomUUID().toString().replaceAll("-", "")+"."+fileExt;
-				newfileExchange.setOldUrl(chnlMovieSearch.getImg());
-				newfileExchange.setNewUrl(newUrl);
-				
-				File storeFile = new File(request.getSession().getServletContext().getRealPath("/")+"uploadfile/"+newUrl);
-				FileOutputStream output = null;
-				try{
-				    client.executeMethod(get);
-				    output = new FileOutputStream(storeFile);
-				    output.write(get.getResponseBody());
-				    output.close();
-				}catch (HttpException e)
-				{
-				    e.printStackTrace();
-				}
-				//存储redis和数据库
-				fileService.addFileExchange(newfileExchange);
-				chnlMovieSearch.setImg(newfileExchange.getNewUrl());
-			}else{
-				chnlMovieSearch.setImg( fileExchange.getNewUrl());
-			}
-		}
+//		for (ChnlMovieSearch chnlMovieSearch : list) {
+//			
+//			FileExchange fileExchange =fileService.getFileExchange(chnlMovieSearch.getImg());
+//			if(null==fileExchange){
+//				FileExchange newfileExchange = new FileExchange();
+//				HttpClient client = new HttpClient();
+//				GetMethod get = new GetMethod(chnlMovieSearch.getImg());
+//				String fileExt = FilenameUtils.getExtension(chnlMovieSearch.getImg());
+//				String newUrl = UUID.randomUUID().toString().replaceAll("-", "")+"."+fileExt;
+//				newfileExchange.setOldUrl(chnlMovieSearch.getImg());
+//				newfileExchange.setNewUrl(newUrl);
+//				
+//				File storeFile = new File(request.getSession().getServletContext().getRealPath("/")+"uploadfile/"+newUrl);
+//				FileOutputStream output = null;
+//				try{
+//				    client.executeMethod(get);
+//				    output = new FileOutputStream(storeFile);
+//				    output.write(get.getResponseBody());
+//				    output.close();
+//				}catch (HttpException e)
+//				{
+//				    e.printStackTrace();
+//				}
+//				//存储redis和数据库
+//				fileService.addFileExchange(newfileExchange);
+//				chnlMovieSearch.setImg(newfileExchange.getNewUrl());
+//			}else{
+//				chnlMovieSearch.setImg( fileExchange.getNewUrl());
+//			}
+//		}
 		
 		model.addAttribute("list", list);
 		

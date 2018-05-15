@@ -83,7 +83,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 </script>
 <link rel="shortcut icon" href="<%=path%>/images/favicon.ico">
 
-
+<link rel="stylesheet" href="/live2d/css/live2d.css" />
 
 </head>
 
@@ -130,5 +130,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <!-- Begin page content -->
     <div class="container">
 	
+	
+	<div id="landlord">
+    <div class="message" style="opacity:0"></div>
+    <canvas id="live2d" width="280" height="250" class="live2d"></canvas>
+    <div class="hide-button">隐藏</div>
+</div>
 	
 	

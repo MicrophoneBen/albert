@@ -1,7 +1,12 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <%@ include file="/include/head.jsp"%>
+
+
     <title><s:message code='laboratory.index'/></title>
+    
+    
+
 <img src="http://www.visitormap.org/map/m:xtllkvjpycspifsb/s:1/c:ffffff/p:dot/y:0.png" >
 
       <div class="content">
@@ -56,4 +61,5 @@
 		});
 	}
 	</script>
+	
 <%@ include file="/include/footer.jsp"%>

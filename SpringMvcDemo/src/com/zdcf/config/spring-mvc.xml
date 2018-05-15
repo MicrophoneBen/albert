@@ -43,6 +43,7 @@
 	<mvc:resources mapping="/uploadface/**" location="/uploadface/" />
 	<mvc:resources mapping="/uploadfile/**" location="/uploadfile/" />
 	<mvc:resources mapping="/mobile/**" location="/mobile/" />
+	<mvc:resources mapping="/live2d/**" location="/live2d/" />
 	
 	<!-- 定义跳转的文件的前后缀 ，视图模式配置-->
 	<bean id="viewResolver"

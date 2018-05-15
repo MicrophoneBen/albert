@@ -3,7 +3,6 @@ package com.zdcf.base;
 public interface Constants {
 
 	//推特验证信息
-	//推特验证信息
 	static String AccessToken = "959746950-ifkHxIgWxgodhDeLYeGeFHf6Vle3gzHpwJnTmIvW";
 	static String AccessSecret = "Y9c4Aad4qCC3sbJJ16avGCVvqvAJuvE1ivbZ3oLemVFsv";
 	static String ConsumerKey = "aWgjz4QU7vm6cITrJ1Ff9Ve49";
@@ -30,7 +29,7 @@ public interface Constants {
 	static final  String SESSION_IMAGE_CODE = "SESSION_IMAGE_CODE";//图形验证码
 	
 	
-	static final String GOOGLE_SEARCH_URL="https://www.googleapis.com/customsearch/v1?cx=007821717631179546661:42aw6xv7bxe&key=AIzaSyD440A4WVC9ozZgcM518QJJfxAhoq9U8zY&q=";
+	static final String GOOGLE_SEARCH_URL="https://www.googleapis.com/customsearch/v1?cx=007821717631179546661:42aw6xv7bxe&key=AIzaSyCTU7bnqcAsdGG7ZhjjEfM706s7Z0tITWE&q=";
 	
 	// 系统中的主要频道编码
 	interface Chnl {

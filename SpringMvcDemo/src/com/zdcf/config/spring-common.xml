@@ -25,7 +25,7 @@
 	
 	<bean id="redisCacheService" class="com.zdcf.service.Impl.RedisCacheService"></bean>
 	
-	<dubbo:application name="SpringMvcDemo" owner="yinhe" organization="yinhe"/>
+	<dubbo:application name="albert" owner="yinhe" organization="yinhe"/>
 	
 	 <!-- 使用multicast广播注册中心暴露服务地址   
     <dubbo:registry address="multicast://224.5.6.7:1234,224.5.6.8:1234" />-->  
@@ -50,55 +50,21 @@
 	
 	
 	<!-- 1.数据源配置  使用c3p0-->
-<!-- 	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close"> -->
-<!-- 		<property name="driverClass" value="com.mysql.jdbc.Driver" /> -->
-<!-- 		<property name="jdbcUrl" value="jdbc:mysql://127.0.0.1:3306/albert?useUnicode=yes&amp;characterEncoding=utf-8" /> -->
-<!-- 		<property name="user" value="root" /> -->
-<!-- 		<property name="password" value="123456" /> -->
-<!-- 		<property name="minPoolSize" value="10" /> -->
-<!-- 		<property name="maxPoolSize" value="15" /> -->
-<!-- 		<property name="maxIdleTime" value="5" /> -->
-<!-- 		<property name="acquireIncrement" value="5" /> -->
-<!-- 		<property name="maxStatements" value="0" /> -->
-<!-- 		<property name="initialPoolSize" value="10" /> -->
-<!-- 		<property name="idleConnectionTestPeriod" value="1" /> -->
-<!-- 	</bean> -->
-	
-	<!-- 	使用druid连接池 -->
-	<bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
-		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
-		
-		<property name="url" value="jdbc:mysql://127.0.0.1:3306/albert?useUnicode=yes&amp;characterEncoding=utf-8" />
-		<property name="username" value="root" />
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close"> 
+		<property name="driverClass" value="com.mysql.jdbc.Driver" />
+		<property name="jdbcUrl" value="jdbc:mysql://127.0.0.1:3306/albert?useUnicode=yes&amp;characterEncoding=utf-8" />
+		<property name="user" value="root" />
 		<property name="password" value="123456" />
-		
-		<!-- 配置初始化大小、最小、最大 -->  
-	    <property name="initialSize" value="10" />  
-	    <property name="minIdle" value="10" />   
-	    <property name="maxActive" value="30" />  
-	   
-	    <!-- 配置获取连接等待超时的时间 -->  
-	    <property name="maxWait" value="5000" />  
-	   
-	    <!-- 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒 -->  
-	    <property name="timeBetweenEvictionRunsMillis" value="60000" />  
-	    <property name="removeAbandoned" value="true" /> <!-- 打开removeAbandoned功能 -->
-    	<property name="removeAbandonedTimeout" value="600" /> <!-- 1800秒，也就是30分钟 , 关闭30分钟内没有使用的连接 -->
-	    <!-- 配置一个连接在池中最小生存的时间，单位是毫秒 -->  
-	    <property name="minEvictableIdleTimeMillis" value="300000" />  
-	    
-	    <property name="validationQuery" value="SELECT 'x'" />  
-	    <property name="testWhileIdle" value="true" />  
-	    <property name="testOnBorrow" value="false" />  
-	    <property name="testOnReturn" value="false" />  
-	   
-	    <!-- 打开PSCache，并且指定每个连接上PSCache的大小  
-	    <property name="poolPreparedStatements" value="true" />  
-	    <property name="maxPoolPreparedStatementPerConnectionSize" value="20" />  
-	   --> 
-	    <!-- 配置监控统计拦截的filters，去掉后监控界面sql无法统计 -->  
-	    <property name="filters" value="stat" />   
+		<property name="minPoolSize" value="10" />
+		<property name="maxPoolSize" value="15" />
+		<property name="maxIdleTime" value="5" />
+		<property name="acquireIncrement" value="5" />
+		<property name="maxStatements" value="0" />
+		<property name="initialPoolSize" value="10" />
+		<property name="idleConnectionTestPeriod" value="1" />
 	</bean>
+	
+	
 	
 	
 	<!-- 2. mybatis的SqlSession的工厂: SqlSessionFactoryBean dataSource:引用数据源   使用xml形式-->
@@ -183,17 +149,19 @@
 			<value>InfoChangeQueue</value>
 		</constructor-arg>
 	</bean>
-
+	
+	<!-- 如果要使用es、消息队列和redis，请放开下面2个配置 start-->
 	<!-- ES以及redis缓存消息监听器 -->
-	<bean id="infoChangeListener" class="com.zdcf.jms.InfoChangeListener" />
+	<bean id="infoChangeListener" class="com.zdcf.jms.InfoChangeListener" /> 
 
 	<!-- 消息监听容器 -->
-	<bean id="jmsContainer"
+	 <bean id="jmsContainer"
 		class="org.springframework.jms.listener.DefaultMessageListenerContainer">
 		<property name="connectionFactory" ref="jmsConnectionFactory" />
 		<property name="destination" ref="infoChangeQueue" />
 		<property name="messageListener" ref="infoChangeListener" />
 	</bean>
+	<!--  end-->
 	
 <!-- 	<bean id="messageSource" -->
 <!-- 		class="org.springframework.context.support.ResourceBundleMessageSource"> -->

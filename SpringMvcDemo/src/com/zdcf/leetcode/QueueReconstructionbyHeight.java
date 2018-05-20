@@ -19,9 +19,9 @@ public class QueueReconstructionbyHeight {
 	
 	public int[][] reconstructQueue(int[][] people) {
 		
-		for(){
-			
-		}
+//		for(){
+//			
+//		}
 		return null;
         
     }

@@ -54,9 +54,9 @@ public class TestGuava {
     public void testCache() throws Exception{
         LoadingCache<String , String> commonCache=commonCache("peida");
         System.out.println("peida:"+commonCache.get("peida"));
-        commonCache.apply("harry");
-        System.out.println("harry:"+commonCache.get("harry"));
-        commonCache.apply("lisa");
-        System.out.println("lisa:"+commonCache.get("lisa"));
+//        commonCache.apply("harry");
+//        System.out.println("harry:"+commonCache.get("harry"));
+//        commonCache.apply("lisa");
+//        System.out.println("lisa:"+commonCache.get("lisa"));
     }
 }

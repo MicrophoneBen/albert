@@ -3,23 +3,18 @@ my personal website
 
 # 部署方法
 
-首先下载4个服务，不下载也可以正常部署项目，但是一些功能无法使用，https://pan.baidu.com/s/1jH72wDo
+首先下载4个服务，不下载也可以正常部署项目，但是一些功能无法使用，https://www.dropbox.com/s/1t2c5ihrkmqa1jt/albert_service.zip?dl=0
 
-1.部署启动 redis3.0.1  windows或者linux版本
+1.下载部署所需服务
 
-2.修改zoo.cfg配置文件，使日志目录和你的环境一致，部署启动 zookeeper-3.4.8  windows或者linux
+2.运行albert.sql文件 (mysql 5.5+) ，在spring-common-xml 修改sql配置
 
-3.部署启动apache-activemq-5.9.0  windows或者linux
+3.jdk1.8，注意lib下的包要引入，项目部署到tomcat8容器启动
 
-4.删除es目录下的data目录下所有缓存数据，部署启动elasticsearch 2.3.3  windows或者linux，注意yml文件的cluster-name设置为albert-es
+4.(附加)近期使用了lombok简化代码，如需在此项目上开发，请在自己的ide上安装lombok，如：eclipse 或myeclipse的话，下载lombok.jar后，当前目录执行java -jar lombok.jar 然后按照提示安装，重启ide即可
 
-5.运行albert.sql文件 (mysql 5.5+) ，在spring-common-xml 修改sql配置
-
-6.jdk1.8，注意lib下的包要引入，项目部署到tomcat8容器启动
-
-7.(附加)近期使用了lombok简化代码，如需在此项目上开发，请在自己的ide上安装lombok，如：eclipse 或myeclipse的话，下载lombok.jar后，当前目录执行java -jar lombok.jar 然后按照提示安装，重启ide即可
-
-8.最详细部署文档见https://github.com/pospospos2007/albert/blob/master/SpringMvcDemo/src/doc/%E9%83%A8%E7%BD%B2%E6%96%87%E6%A1%A3.txt
+5.最详细部署文档见
+https://github.com/pospospos2007/albert/blob/master/albert/src/doc/%E9%83%A8%E7%BD%B2%E6%96%87%E6%A1%A3.txt
 
 # 开发环境和工具
 1.SpringMvc

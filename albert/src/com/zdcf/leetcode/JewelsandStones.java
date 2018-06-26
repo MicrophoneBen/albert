@@ -30,7 +30,7 @@ public class JewelsandStones {
         }
         return count;
     }
-	//solution 2 使用java String的自带方法contains()和replaceAll()
+	
 
 	
 }

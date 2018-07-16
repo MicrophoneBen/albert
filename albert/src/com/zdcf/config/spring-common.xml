@@ -54,7 +54,7 @@
 		<property name="driverClass" value="com.mysql.jdbc.Driver" />
 		<property name="jdbcUrl" value="jdbc:mysql://127.0.0.1:3306/albert?useUnicode=yes&amp;characterEncoding=utf-8" />
 		<property name="user" value="root" />
-		<property name="password" value="Aa123456" />
+		<property name="password" value="123456" />
 		<property name="minPoolSize" value="10" />
 		<property name="maxPoolSize" value="15" />
 		<property name="maxIdleTime" value="5" />
